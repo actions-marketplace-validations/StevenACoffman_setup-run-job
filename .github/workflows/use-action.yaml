@@ -31,7 +31,7 @@ jobs:
       - name: Install old release
         uses: StevenACoffman/setup-run-job@main
         with:
-          version: v0.0.1
+          version: v0.0.2
 
       - run: which run-job
       - name: Check installed version
