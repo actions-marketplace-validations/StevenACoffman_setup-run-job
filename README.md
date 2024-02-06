@@ -44,7 +44,7 @@ jobs:
       - name: Install KO
         uses: imjasonh/setup-ko@v0.6
       - name: Install Run Job
-        uses: StevenACoffman/setup-run-job@v0.0.0
+        uses: StevenACoffman/setup-run-job@v0.0.4
       - name: 'Authenticate to Google Cloud'
         id: 'auth'
         uses: 'google-github-actions/auth@v2'
@@ -89,9 +89,9 @@ By default, `setup-run-job` installs the [latest released version of `run-job`](
 You can select a run-job release version with the `version` parameter:
 
 ```yaml
-- uses: StevenACoffman/setup-run-job@v0.0.0
+- uses: StevenACoffman/setup-run-job@v0.0.4
   with:
-    version: v0.1.1
+    version: 0.1.1
 ```
 
 To build and install `run-job` from source using `go install`, specify `version: tip`.
@@ -99,7 +99,7 @@ To build and install `run-job` from source using `go install`, specify `version:
 ```yaml
 steps:
 ...
-- uses: StevenACoffman/setup-run-job@v0.0.0
+- uses: StevenACoffman/setup-run-job@v0.0.4
 - name: 'Run a Job in Kubernetes'
   run: |
     run-job -kubeconfig "${KUBECONFIG}" -f runjob.yaml
