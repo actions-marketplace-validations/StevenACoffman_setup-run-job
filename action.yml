@@ -52,7 +52,8 @@ runs:
 
       if [[ ! -z ${tag} ]]; then
         echo "Installing run-job @ ${tag} for ${os}"
-        curl -fsL https://github.com/alexellis/run-job/releases/download/${tag}/run-job --clobber -o "${{ runner.temp }}/run-job"
+        rm -f "${{ runner.temp }}/run-job" || return 0
+        curl -fsL https://github.com/alexellis/run-job/releases/download/${tag}/run-job -o "${{ runner.temp }}/run-job"
         chmod a+x "${{ runner.temp }}/run-job"
         sudo mv "${{ runner.temp }}/run-job" "/usr/local/bin/run-job"    
       fi
