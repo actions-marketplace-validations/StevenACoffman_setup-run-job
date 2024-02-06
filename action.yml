@@ -52,7 +52,7 @@ runs:
 
       if [[ ! -z ${tag} ]]; then
         echo "Installing run-job @ ${tag} for ${os}"
-        curl -fsL https://github.com/alexellis/run-job/releases/download/${tag}/run-job -o "${TMPDIR}/run-job"
-        chmod a+x "${TMPDIR}/run-job"
-        sudo mv "${TMPDIR}/run-job" "/usr/local/bin/run-job"    
+        curl -fsL https://github.com/alexellis/run-job/releases/download/${tag}/run-job -o "${{ runner.temp }}/run-job"
+        chmod a+x "${{ runner.temp }}/run-job"
+        sudo mv "${{ runner.temp }}/run-job" "/usr/local/bin/run-job"    
       fi
