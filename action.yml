@@ -22,7 +22,7 @@ runs:
       case ${{ inputs.version }} in
       tip)
         echo "Installing run-job using go install"
-        go install github.com/alexellis/run-job@main
+        go install github.com/alexellis/run-job@master
         ;;
       latest-release)
         tag=$(curl -L -s -u "username:${{ github.token }}" https://api.github.com/repos/alexellis/run-job/releases/latest | jq -r '.tag_name')
